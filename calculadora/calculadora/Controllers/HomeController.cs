@@ -15,7 +15,7 @@ namespace calculadora.Controllers
         }
         // POST: Home
         [HttpPost]
-        public ActionResult Index(string bt)
+        public ActionResult Index(string bt,string name)
         {
             return View();
         }
