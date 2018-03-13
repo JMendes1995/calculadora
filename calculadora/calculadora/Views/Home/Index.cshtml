@@ -9,88 +9,112 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Calculadora</title>
+    <style>
+        tr{
+            width:50px;
+            height:50px;
+        }
+        input:hover{
+            background-color:aqua;  
+            
+         }
+    </style>
 </head>
 <body>
    
         <h1>Calculadora</h1>
     <!--objeto para devolver o conteudo da calculadora-->
         <form method="post">
-            <table border="1">
+            <table  border="1">
                 <tr>
-                    <td colspan="5">
-                        <input type="text" name="visor" style="text-align:right" value="0" readonly />
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td colspan="5">
-                        <input type="text" name="visor" style="text-align:right" value="0" readonly />
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <input type="submit" value="7" name="bt" />
-                    </td>
-                    <td>
-                        <input type="submit" value="8" name="bt" />
-                    </td>
-                    <td>
-                        <input type="submit" value="9" name="bt" />
-                    </td>
-                    <td>
-                        <input type="submit" value=":" name="bt" />
-                    </td>
-                    <td>
-                        <input type="submit" value="-/+" name="bt" />
+                    <td colspan="5"  height="100%">
+                        <input type="text" name="visor"  style="text-align:right" value="@ViewBag.bt" readonly />
+                        @{ 
+                            switch (ViewBag.bt)
+                            {
+                                case "0":
+                                case "1":
+                                case "2":
+                                case "3":
+                                case "4":
+                                case "5":
+                                case "6":
+                                case "7":
+                                case "8":
+                                case "9":
+                                    
+                                    break;
+                                default:
+                                    ViewBag.bt = "0";
+                                   
+                                    break;
+                            }
+                        }
                     </td>
                 </tr>
 
                 <tr>
-                    <td>
-                        <input type="submit" value="4" name="bt" />
+                    <td height="100%">
+                        <input type="submit" value="7" name="bt" style="width:100%; height:100%"  />
+                    </td>
+                    <td >
+                        <input type="submit" value="8" name="bt"  style="width:100%; height:100%" />
                     </td>
                     <td>
-                        <input type="submit" value="5" name="bt" />
+                        <input type="submit" value="9" name="bt"  style="width:100%; height:100%"  />
                     </td>
                     <td>
-                        <input type="submit" value="6" name="bt" />
+                        <input type="submit" value=":" name="bt"  style="width:100%; height:100%"  />
                     </td>
                     <td>
-                        <input type="submit" value="x" name="bt" />
-                    </td>
-                    <td>
-                        <input type="submit" value="C" name="bt" />
+                        <input type="submit" value="-/+" name="bt"  style="width:100%; height:100%"     />
                     </td>
                 </tr>
 
                 <tr>
-                    <td>
-                        <input type="submit" value="1" name="bt" />
+                    <td height="100%">
+                        <input type="submit" value="4" name="bt"  style="width:100%; height:100%" />
                     </td>
                     <td>
-                        <input type="submit" value="2" name="bt" />
+                        <input type="submit" value="5" name="bt"  style="width:100%; height:100%" />
                     </td>
                     <td>
-                        <input type="submit" value="3" name="bt" />
+                        <input type="submit" value="6" name="bt"  style="width:100%; height:100%" />
                     </td>
                     <td>
-                        <input type="submit" value="-" name="bt" />
+                        <input type="submit" value="x" name="bt"  style="width:100%; height:100%" />
+                    </td>
+                    <td>
+                        <input type="submit" value="C" name="bt"  style="width:100%; height:100%" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td height="100%">
+                        <input type="submit" value="1" name="bt"  style="width:100%; height:100%" />
+                    </td>
+                    <td>
+                        <input type="submit" value="2" name="bt"  style="width:100%; height:100%" />
+                    </td>
+                    <td>
+                        <input type="submit" value="3" name="bt"  style="width:100%; height:100%" />
+                    </td>
+                    <td>
+                        <input type="submit" value="-" name="bt"  style="width:100%; height:100%" />
                     </td>
                     <td colspan="2">
-                        <input type="submit" value="=" name="bt" />
+                        <input type="submit" value="=" name="bt"  style="width:100%; height:100%" />
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">
-                        <input type="submit" value="0" name="bt" />
+                    <td colspan="2" height="100%">
+                        <input type="submit" value="0" name="bt"  style="width:100%; height:100%" />
                     </td>
                     <td>
-                        <input type="submit" value="," name="bt" />
+                        <input type="submit" value="," name="bt"  style="width:100%; height:100%" />
                     </td>
-                    <td rowspan="2">
-                        <input type="submit" value="+" name="bt" />
+                    <td rowspan="2" >
+                        <input type="submit" value="+" name="bt"  style="width:250%; height:100%" />
                     </td>
                 </tr>
             </table>
