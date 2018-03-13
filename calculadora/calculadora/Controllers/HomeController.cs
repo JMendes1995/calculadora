@@ -8,7 +8,7 @@ namespace calculadora.Controllers
 {
     public class HomeController : Controller
     {
-        
+
         // GET: Home
         public ActionResult Index()
         {
@@ -23,7 +23,7 @@ namespace calculadora.Controllers
         [HttpPost]
         public ActionResult Index(string bt, string visor)
         {
-   
+
             switch (bt)
             {
                 case "0":
@@ -44,11 +44,11 @@ namespace calculadora.Controllers
                         visor = bt;
                     }
                     else visor += bt;
-                        Session["limpaVisor"] = false;
-                    
+                    Session["limpaVisor"] = false;
+
                     break;
                 case "-/+":
-                    visor = Convert.ToDouble(visor) * -1 +"";
+                    visor = Convert.ToDouble(visor) * -1 + "";
                     break;
                 case ",":
                     if (!visor.Contains(","))
@@ -62,14 +62,15 @@ namespace calculadora.Controllers
                 case ":":
                 case "=":
                     // se é a primeira vez que pressiono um operador
-                    if (!((string) Session["operador"]).Equals("")) {
+                    if (!((string)Session["operador"]).Equals(""))
+                    {
 
-                    //cria uma variavel de sessao e guarda o visor
-                    //Session["primeiroOperando"]= visor;
-                    //Session["operador"]= bt;
+                        //cria uma variavel de sessao e guarda o visor
+                        //Session["primeiroOperando"]= visor;
+                        //Session["operador"]= bt;
                         //prepara o visor para uma nova inst
-                      //  Session["limpaVisor"] = true;
-            
+                        //  Session["limpaVisor"] = true;
+
                         //agora é realizada a operação
                         double primOpre = Convert.ToDouble((string)Session["primeiroOperando"]);
                         //obter o 2 operando
@@ -78,7 +79,7 @@ namespace calculadora.Controllers
                         //escolher a operação a fazer 
                         switch ((string)Session["primeiroOperando"])
                         {
-                            
+
 
                             case "+":
                                 visor = primOpre + segOper + "";
@@ -100,23 +101,24 @@ namespace calculadora.Controllers
                         if (bt.Equals("="))
                         {
                             Session["operador"] = "";
-                        }else Session["operador"] = bt;
+                        }
+                        else Session["operador"] = bt;
 
                         Session["primeiroOperando"] = visor;
 
                         // macar o visor para  limpeza
-                        Session["limpaVisor"]= true;
+                        Session["limpaVisor"] = true;
 
                     }//if
                     break;
-                
+
                 case "C":
                     visor = "0";
                     Session["operador"] = "";
                     Session["limpaVisor"] = true;
-                    
+
                     //preparar os primeiros valores da  calculadora
-                   
+
                     break;
 
             }
