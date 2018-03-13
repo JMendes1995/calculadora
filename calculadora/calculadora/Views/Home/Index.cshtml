@@ -28,28 +28,8 @@
             <table  border="1">
                 <tr>
                     <td colspan="5"  height="100%">
-                        <input type="text" name="visor"  style="text-align:right" value="@ViewBag.bt" readonly />
-                        @{ 
-                            switch (ViewBag.bt)
-                            {
-                                case "0":
-                                case "1":
-                                case "2":
-                                case "3":
-                                case "4":
-                                case "5":
-                                case "6":
-                                case "7":
-                                case "8":
-                                case "9":
-                                    
-                                    break;
-                                default:
-                                    ViewBag.bt = "0";
-                                   
-                                    break;
-                            }
-                        }
+                        <input type="text" name="visor"  style="text-align:right" value="@ViewBag.visor" readonly />
+                 
                     </td>
                 </tr>
 
